@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import CommandEntry from './CommandEntry'
+import { parseUserInput } from './UserInputParser'
 import './Interface.css'
 
 export class Interface extends Component {
@@ -24,6 +25,32 @@ export class Interface extends Component {
     }
     this.setState(prevState => {
       return { eventList: [...prevState.eventList, newMsgObj] }
+    }, () => {
+      let userMsgResult = parseUserInput(msg);
+      if (!userMsgResult) {
+        this.pushRobitMessage("")
+      } else {
+        this.pushRobitMessage(userMsgResult)
+      }
+    })
+  }
+
+  pushRobitMessage = (msg) => {
+    let msgObj;
+    if (!msg) {
+      msgObj = {
+        text: "Unrecognizable command, try again.",
+        isUser: false
+      }
+    } else {
+      msgObj = {
+        text: msg,
+        isUser: false
+      }
+    }
+
+    this.setState(prevState => {
+      return { eventList: [...prevState.eventList, msgObj]}
     })
   }
 
