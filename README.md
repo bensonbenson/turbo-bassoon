@@ -4,6 +4,12 @@
 
 This is a, currently, WIP React-based text game/choose your own adventure.
 
+# To-Do
+- Everything lol
+  - basically functinality
+  - an actual theme
+  - doot doot?
+
 ## Installation
 
 Clone the repo and then
