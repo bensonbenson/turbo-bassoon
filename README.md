@@ -6,7 +6,7 @@ This is a, currently, WIP React-based text game/choose your own adventure.
 
 # To-Do
 - Everything lol
-  - basical functionality
+  - basic functionality
   - an actual theme
   - doot doot?
 
