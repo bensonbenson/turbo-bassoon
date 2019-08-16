@@ -10,7 +10,7 @@ export class Interface extends Component {
       eventList:
       [
         {
-          text: "",
+          text: "Greetings. Currently WIP, try typing 'commands' for current commands list",
           isUser: false
         },
       ]
