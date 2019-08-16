@@ -1,0 +1,10 @@
+.interface-area {
+  width: 100%;
+  height: 700px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.interface-text {
+  color: blue;
+}

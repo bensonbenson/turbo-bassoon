@@ -1,0 +1,34 @@
+.command-line-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.command-line {
+  width: 100%;
+  height: 15px;
+  border: 1px solid black;
+}
+
+.command-submit {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  background-color:#f9f9f9;
+  cursor:pointer;
+  color:#666666;
+  font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #ffffff;
+  text-align: center;
+  outline: none;
+}
+
+.command-submit:active {
+	position:relative;
+	top:1px;
+}
+
