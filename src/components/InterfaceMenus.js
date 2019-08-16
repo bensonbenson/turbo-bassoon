@@ -1,6 +1,17 @@
+export const getCommandList = () => {
+  const menuKeys = Object.keys(menus);
+  let commands = [];
+  menuKeys.forEach(key => {
+    commands.push(key)
+  });
+
+  return `List of commands: commands,${commands.toString()}`;
+}
+
+// TO-DO: multiple randomly generated responses for some commands
 export const menus = {
-  commands: {
-    value: "List of commands: commands, checkbassoon"
+  staredown: {
+    value: "You stare down the text interface fiercely, nothing happens."
   },
   checkbassoon: {
     value: "???"
