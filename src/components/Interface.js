@@ -9,20 +9,21 @@ export class Interface extends Component {
       eventList:
       [
         {
-          text: "Game start",
+          text: "",
           isUser: false
         },
       ]
     }
   }
 
+  // Callback for CommandEntry, passes inputs to here
   getCommand = (msg) => {
     const newMsgObj = {
       text: msg,
       isUser: true
     }
     this.setState(prevState => {
-      return{eventList: [...prevState.eventList, newMsgObj]}
+      return { eventList: [...prevState.eventList, newMsgObj] }
     })
   }
 
