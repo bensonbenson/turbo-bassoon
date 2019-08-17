@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CommandEntry from './CommandEntry'
 import { parseUserInput } from './UserInputParser'
-import './Interface.css'
+import './styles/Interface.css'
 
 export class Interface extends Component {
   constructor(props) {

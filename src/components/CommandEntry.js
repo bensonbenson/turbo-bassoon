@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './CommandEntry.css'
+import './styles/CommandEntry.css'
 
 export class CommandEntry extends Component {
   constructor(props) {
