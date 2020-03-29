@@ -14,6 +14,12 @@ export const menus = {
     value: "You stare down the text interface fiercely, nothing happens."
   },
   checkbassoon: {
-    value: "???"
+    value: "doot doot"
+  }
+}
+
+export const hiddenMenus = {
+  toomanystares: {
+    value: "Stop staring at me pls."
   }
 }

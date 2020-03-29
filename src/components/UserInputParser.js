@@ -1,7 +1,11 @@
-import { menus, getCommandList } from './InterfaceMenus'
+import { menus, hiddenMenus, getCommandList } from './InterfaceMenus'
+
+// Count the amount of `staredown` commands
+let stareDownCount = 0;
 
 export const parseUserInput = (msg) => {
   let menuKeys = Object.keys(menus);
+  let hiddenMenuKeys = Object.keys(hiddenMenus);
   let cleanedMsg = userInputCleaner(msg);
 
   // Show command list
@@ -9,6 +13,16 @@ export const parseUserInput = (msg) => {
   if (cleanedMsg === "commands" || cleanedMsg === "command" || cleanedMsg === "commandlist") {
     return getCommandList();
   }
+
+  // Count the amount of staredowns, if the amount of stares reaches 5, return a secret message
+  if ((cleanedMsg === "staredown") && (stareDownCount < 5)) {
+    stareDownCount++;
+    return menus[menuKeys[0]].value
+  }
+  if ((cleanedMsg === "staredown") && (stareDownCount >= 5)) {
+    return hiddenMenus[hiddenMenuKeys[0]].value
+  }
+
   // Match user to the enum of possible menu options
   for (let i = 0; i < menuKeys.length; i++) {
     if (cleanedMsg === menuKeys[i]) {

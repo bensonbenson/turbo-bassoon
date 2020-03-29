@@ -9,6 +9,7 @@ This is a, currently, WIP React-based text game/choose your own adventure.
   - basic functionality
   - an actual theme
   - doot doot?
+- something bassoon related that happens after multiple staredowns
 
 ## Installation
 
