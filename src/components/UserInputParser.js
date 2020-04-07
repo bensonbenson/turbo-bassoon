@@ -23,6 +23,8 @@ export const parseUserInput = (msg) => {
     // Staredown path
     case "staredown":
       return stareDownHandler(menuKeys, hiddenMenuKeys);
+    case "clear":
+      return "clear";
     default:
       break;
   }

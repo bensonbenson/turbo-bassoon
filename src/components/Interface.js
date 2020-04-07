@@ -3,18 +3,20 @@ import CommandEntry from './CommandEntry'
 import { parseUserInput } from './UserInputParser'
 import './styles/Interface.css'
 
+const CLEAREDSTATE = {
+  eventList:
+  [
+    {
+      text: "Greetings. Currently WIP, try typing 'commands' for current commands list",
+      isUser: false
+    },
+  ]
+}
+
 export class Interface extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      eventList:
-      [
-        {
-          text: "Greetings. Currently WIP, try typing 'commands' for current commands list",
-          isUser: false
-        },
-      ]
-    }
+    this.state = CLEAREDSTATE
   }
 
   // Callback for CommandEntry, passes inputs to here
@@ -29,6 +31,8 @@ export class Interface extends Component {
       let userMsgResult = parseUserInput(msg);
       if (!userMsgResult) {
         this.pushRobitMessage("")
+      } else if (userMsgResult === "clear") {
+        this.clearEvents();
       } else {
         this.pushRobitMessage(userMsgResult)
       }
@@ -69,6 +73,11 @@ export class Interface extends Component {
       )
     })
     )
+  }
+
+  // Clear eventList
+  clearEvents = () => {
+    this.setState(CLEAREDSTATE)
   }
 
   render() {
