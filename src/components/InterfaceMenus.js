@@ -18,8 +18,13 @@ export const menus = {
   }
 }
 
+// Progress through the game with this gated menu
 export const hiddenMenus = {
   toomanystares: {
     value: "Stop staring at me pls."
+  },
+  // After 5 staredowns
+  checkbassoon: {
+    value: "You feel a vibration coming from your bassoon."
   }
 }

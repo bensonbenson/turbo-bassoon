@@ -3,6 +3,9 @@ import { menus, hiddenMenus, getCommandList } from './InterfaceMenus'
 // Count the amount of `staredown` commands
 let stareDownCount = 0;
 
+// (TODO) path to victory: 5x staredown, checkbassoon, ???
+let gate = 0;
+
 export const parseUserInput = (msg) => {
   let menuKeys = Object.keys(menus);
   let hiddenMenuKeys = Object.keys(hiddenMenus);
@@ -29,12 +32,22 @@ export const parseUserInput = (msg) => {
       break;
   }
 
-  // Match user to the enum of possible menu options
-  for (let i = 0; i < menuKeys.length; i++) {
-    if (cleanedMsg === menuKeys[i]) {
-      return menus[menuKeys[i]].value
+  // Post 5x staredowns
+  if (gate === 1) {
+    for (let i = 0; i < hiddenMenuKeys.length; i++) {
+      if (cleanedMsg === hiddenMenuKeys[i]) {
+        return hiddenMenus[hiddenMenuKeys[i]].value
+      }
+    }
+  } else {
+    // Match user to the enum of possible regular menu options
+    for (let i = 0; i < menuKeys.length; i++) {
+      if (cleanedMsg === menuKeys[i]) {
+        return menus[menuKeys[i]].value
+      }
     }
   }
+
   return false;
 }
 
@@ -49,6 +62,8 @@ const stareDownHandler = (menuKeys, hiddenMenuKeys) => {
     return menus[menuKeys[0]].value
   }
   if (stareDownCount >= 5) {
+    gate++;
+    console.log(gate)
     return hiddenMenus[hiddenMenuKeys[0]].value
   }
 }
